@@ -1,0 +1,29 @@
+#!/bin/bash
+
+memtest(){
+    CPU_NUM=$(nproc)
+    if [[ $CPU_NUM == "1" ]]; then
+        memtest 2> errors.txt 
+    elif [[ $CPU_NUM == "2" ]]; then
+        memtest 2> errors.txt 
+    elif [[ $CPU_NUM == "4" ]]; then
+        memtest 2> errors.txt
+    fi
+}
+
+
+clear
+echo "========================================="
+echo "Main Munu---"
+echo "========================================="
+echo "1.  Memory test"
+echo "2.  CPU test"
+echo "3.  SD,EMMC,SATA speed test"
+echo "4.  CANBUS test"
+echo "5.  GPIO test"
+echo "6.  SGTL5000 Codec test"
+echo "7.  I2C bus test"
+echo ""
+echo -n "Please choose 1 item: "
+read var_item
+echo $var_item
